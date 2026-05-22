@@ -1,0 +1,17 @@
+{
+  "name": "超级手机网站",
+  "short_name": "超级网站",
+  "description": "20+模式，1000+功能的超级手机网站",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#667eea",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

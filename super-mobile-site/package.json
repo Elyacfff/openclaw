@@ -1,0 +1,18 @@
+{
+  "name": "super-mobile-site",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "超级手机网站 - 20+模式，1000+功能的玻璃拟态移动端应用",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lit": "^3.3.2"
+  },
+  "devDependencies": {
+    "vite": "^8.0.12"
+  }
+}

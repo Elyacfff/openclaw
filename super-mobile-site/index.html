@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#007AFF">
+  <title>超级手机网站</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <style>
+    /* CSS Variables - 玻璃拟态设计系统 */
+    :root {
+      /* 颜色系统 */
+      --primary: #007AFF;
+      --primary-light: #4DA3FF;
+      --primary-dark: #0056CC;
+      --secondary: #5856D6;
+      --secondary-light: #7B79E0;
+      --accent: #FF9500;
+      --accent-light: #FFB040;
+      --success: #34C759;
+      --warning: #FF9500;
+      --danger: #FF3B30;
+      --info: #5AC8FA;
+
+      /* 玻璃效果 */
+      --glass-bg: rgba(255, 255, 255, 0.15);
+      --glass-bg-dark: rgba(255, 255, 255, 0.25);
+      --glass-border: rgba(255, 255, 255, 0.3);
+      --glass-border-light: rgba(255, 255, 255, 0.5);
+      --glass-shadow: rgba(0, 0, 0, 0.1);
+      --glass-blur: 20px;
+      --glass-blur-light: 10px;
+
+      /* 背景渐变 */
+      --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      --gradient-bg-dark: linear-gradient(135deg, #2c3e50 0%, #3a7bd5 100%);
+
+      /* 文字颜色 */
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.7);
+      --text-tertiary: rgba(255, 255, 255, 0.5);
+
+      /* 圆角 */
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --radius-xxl: 24px;
+      --radius-full: 9999px;
+
+      /* 间距 */
+      --space-xs: 4px;
+      --space-sm: 8px;
+      --space-md: 12px;
+      --space-lg: 16px;
+      --space-xl: 24px;
+      --space-xxl: 32px;
+
+      /* 动画 */
+      --transition-fast: 0.15s ease;
+      --transition-normal: 0.3s ease;
+      --transition-slow: 0.5s ease;
+
+      /* 字体 */
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-size-xs: 10px;
+      --font-size-sm: 12px;
+      --font-size-md: 14px;
+      --font-size-lg: 16px;
+      --font-size-xl: 20px;
+      --font-size-xxl: 24px;
+      --font-size-xxxl: 30px;
+    }
+
+    /* 深色模式 */
+    [data-theme="dark"] {
+      --glass-bg: rgba(0, 0, 0, 0.3);
+      --glass-bg-dark: rgba(0, 0, 0, 0.5);
+      --glass-border: rgba(255, 255, 255, 0.15);
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.8);
+      --text-tertiary: rgba(255, 255, 255, 0.6);
+    }
+
+    /* 基础样式 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      font-family: var(--font-family);
+      font-size: var(--font-size-md);
+      color: var(--text-primary);
+      background: var(--gradient-bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow: hidden;
+      touch-action: manipulation;
+    }
+
+    /* 玻璃拟态卡片 */
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 8px 32px var(--glass-shadow);
+      transition: all var(--transition-normal);
+    }
+
+    .glass-card:hover {
+      background: var(--glass-bg-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    /* 玻璃按钮 */
+    .glass-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      padding: var(--space-md) var(--space-lg);
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur-light));
+      -webkit-backdrop-filter: blur(var(--glass-blur-light));
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      color: var(--text-primary);
+      font-size: var(--font-size-md);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .glass-button:hover {
+      background: var(--glass-bg-dark);
+      border-color: var(--glass-border-light);
+      transform: scale(1.02);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .glass-button:active {
+      transform: scale(0.98);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .glass-button.primary {
+      background: var(--primary);
+      border-color: var(--primary-light);
+    }
+
+    .glass-button.primary:hover {
+      background: var(--primary-light);
+    }
+
+    /* 图标按钮 */
+    .icon-button {
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border-radius: var(--radius-full);
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur-light));
+      border: 1px solid var(--glass-border);
+      color: var(--text-primary);
+      font-size: 20px;
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-button:hover {
+      background: var(--glass-bg-dark);
+      transform: scale(1.1);
+    }
+
+    .icon-button:active {
+      transform: scale(0.95);
+    }
+
+    /* 输入框 */
+    .glass-input {
+      width: 100%;
+      padding: var(--space-md) var(--space-lg);
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur-light));
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      color: var(--text-primary);
+      font-size: var(--font-size-md);
+      outline: none;
+      transition: all var(--transition-normal);
+    }
+
+    .glass-input::placeholder {
+      color: var(--text-tertiary);
+    }
+
+    .glass-input:focus {
+      border-color: var(--primary);
+      background: var(--glass-bg-dark);
+      box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+    }
+
+    /* 应用容器 */
+    #app {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* 主内容区 */
+    .main-content {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: var(--space-lg);
+      padding-bottom: 80px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* 头部 */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: var(--space-lg);
+      padding-top: max(var(--space-lg), env(safe-area-inset-top));
+      background: rgba(102, 126, 234, 0.3);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .header h1 {
+      font-size: var(--font-size-xxl);
+      font-weight: 700;
+      margin-bottom: var(--space-sm);
+    }
+
+    .header-subtitle {
+      font-size: var(--font-size-sm);
+      color: var(--text-secondary);
+    }
+
+    /* 底部导航 */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-around;
+      padding: var(--space-sm) var(--space-lg);
+      padding-bottom: max(var(--space-sm), env(safe-area-inset-bottom));
+      background: rgba(102, 126, 234, 0.4);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-xs);
+      padding: var(--space-sm);
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-radius: var(--radius-lg);
+      transition: all var(--transition-normal);
+      cursor: pointer;
+      min-width: 60px;
+    }
+
+    .nav-item:hover, .nav-item.active {
+      color: var(--text-primary);
+      background: var(--glass-bg);
+    }
+
+    .nav-item.active {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .nav-icon {
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .nav-label {
+      font-size: var(--font-size-xs);
+      font-weight: 500;
+    }
+
+    /* 模式网格 */
+    .mode-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: var(--space-lg);
+      padding: var(--space-lg) 0;
+    }
+
+    .mode-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-md);
+      padding: var(--space-xl);
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur-light));
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      cursor: pointer;
+      transition: all var(--transition-normal);
+    }
+
+    .mode-card:hover {
+      background: var(--glass-bg-dark);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .mode-card:active {
+      transform: scale(0.95);
+    }
+
+    .mode-icon {
+      font-size: 32px;
+      line-height: 1;
+    }
+
+    .mode-name {
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+      text-align: center;
+      color: var(--text-primary);
+    }
+
+    .mode-count {
+      font-size: var(--font-size-xs);
+      color: var(--text-secondary);
+    }
+
+    /* 功能列表 */
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      padding: var(--space-lg) 0;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+      padding: var(--space-lg);
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur-light));
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      cursor: pointer;
+      transition: all var(--transition-normal);
+    }
+
+    .feature-item:hover {
+      background: var(--glass-bg-dark);
+      transform: translateX(4px);
+    }
+
+    .feature-item:active {
+      transform: scale(0.98);
+    }
+
+    .feature-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .feature-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .feature-title {
+      font-size: var(--font-size-md);
+      font-weight: 600;
+      margin-bottom: var(--space-xs);
+      color: var(--text-primary);
+    }
+
+    .feature-desc {
+      font-size: var(--font-size-sm);
+      color: var(--text-secondary);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .feature-arrow {
+      font-size: 18px;
+      color: var(--text-tertiary);
+      flex-shrink: 0;
+    }
+
+    /* 页面容器 */
+    .page {
+      display: none;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .page.active {
+      display: flex;
+    }
+
+    /* 滚动区域 */
+    .scroll-content {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* 工具栏 */
+    .toolbar {
+      display: flex;
+      gap: var(--space-md);
+      padding: var(--space-lg);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .toolbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .toolbar-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-md) var(--space-lg);
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur-light));
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-full);
+      color: var(--text-primary);
+      font-size: var(--font-size-sm);
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all var(--transition-normal);
+    }
+
+    .toolbar-item:hover {
+      background: var(--glass-bg-dark);
+    }
+
+    .toolbar-item.active {
+      background: var(--primary);
+      border-color: var(--primary-light);
+    }
+
+    /* 统计卡片 */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: var(--space-lg);
+      padding: var(--space-lg) 0;
+    }
+
+    .stat-card {
+      padding: var(--space-xl);
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur-light));
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: var(--font-size-xxl);
+      font-weight: 700;
+      margin-bottom: var(--space-sm);
+      color: var(--text-primary);
+    }
+
+    .stat-label {
+      font-size: var(--font-size-sm);
+      color: var(--text-secondary);
+    }
+
+    /* 动画 */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn var(--transition-normal) ease;
+    }
+
+    .animate-slide-up {
+      animation: slideUp var(--transition-slow) ease;
+    }
+
+    .animate-pulse {
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    /* 响应式 */
+    @media (max-width: 480px) {
+      :root {
+        --font-size-md: 14px;
+        --font-size-lg: 16px;
+        --font-size-xl: 18px;
+        --font-size-xxl: 22px;
+      }
+
+      .mode-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-md);
+      }
+
+      .mode-card {
+        padding: var(--space-lg);
+      }
+
+      .mode-icon {
+        font-size: 28px;
+      }
+
+      .mode-name {
+        font-size: 11px;
+      }
+    }
+
+    /* 安全区域适配 */
+    @supports (padding: max(0px)) {
+      .header {
+        padding-top: max(var(--space-lg), env(safe-area-inset-top));
+      }
+
+      .bottom-nav {
+        padding-bottom: max(var(--space-sm), env(safe-area-inset-bottom));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- 首页 -->
+    <div class="page active" id="page-home">
+      <div class="header">
+        <h1>🚀 超级手机网站</h1>
+        <div class="header-subtitle">20+模式 · 1000+功能 · 玻璃拟态设计</div>
+      </div>
+      <div class="scroll-content">
+        <div class="main-content">
+          <!-- 快捷工具栏 -->
+          <div class="toolbar">
+            <div class="toolbar-item active" onclick="switchMode('home')">
+              <span>🏠</span>
+              <span>首页</span>
+            </div>
+            <div class="toolbar-item" onclick="switchMode('tools')">
+              <span>🛠️</span>
+              <span>工具</span>
+            </div>
+            <div class="toolbar-item" onclick="switchMode('social')">
+              <span>💬</span>
+              <span>社交</span>
+            </div>
+            <div class="toolbar-item" onclick="switchMode('learning')">
+              <span>📚</span>
+              <span>学习</span>
+            </div>
+            <div class="toolbar-item" onclick="switchMode('life')">
+              <span>🌟</span>
+              <span>生活</span>
+            </div>
+          </div>
+
+          <!-- 统计概览 -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-value">20+</div>
+              <div class="stat-label">功能模式</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">1000+</div>
+              <div class="stat-label">可用功能</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">🎨</div>
+              <div class="stat-label">玻璃拟态</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">📱</div>
+              <div class="stat-label">手机优先</div>
+            </div>
+          </div>
+
+          <!-- 模式选择 -->
+          <h2 style="margin: var(--space-xl) 0 var(--space-lg); font-size: var(--font-size-xl);">选择模式</h2>
+          <div class="mode-grid" id="mode-grid">
+            <!-- 模式卡片将通过 JS 动态生成 -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 模式详情页 -->
+    <div class="page" id="page-mode">
+      <div class="header" id="mode-header">
+        <h1 id="mode-title">模式名称</h1>
+        <div class="header-subtitle" id="mode-subtitle">功能数量</div>
+      </div>
+      <div class="scroll-content">
+        <div class="main-content">
+          <div class="feature-list" id="feature-list">
+            <!-- 功能列表将通过 JS 动态生成 -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 功能详情页 -->
+    <div class="page" id="page-feature">
+      <div class="header">
+        <h1 id="feature-title">功能名称</h1>
+      </div>
+      <div class="scroll-content">
+        <div class="main-content" id="feature-content">
+          <!-- 功能内容将通过 JS 动态生成 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部导航 -->
+    <div class="bottom-nav">
+      <div class="nav-item active" data-page="home" onclick="showPage('home')">
+        <div class="nav-icon">🏠</div>
+        <div class="nav-label">首页</div>
+      </div>
+      <div class="nav-item" data-page="modes" onclick="showPage('modes')">
+        <div class="nav-icon">📱</div>
+        <div class="nav-label">模式</div>
+      </div>
+      <div class="nav-item" data-page="favorites" onclick="showPage('favorites')">
+        <div class="nav-icon">⭐</div>
+        <div class="nav-label">收藏</div>
+      </div>
+      <div class="nav-item" data-page="settings" onclick="showPage('settings')">
+        <div class="nav-icon">⚙️</div>
+        <div class="nav-label">设置</div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
