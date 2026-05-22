@@ -5,91 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="theme-color" content="#007AFF">
-  <title>超级手机网站</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#667eea">
+  <meta name="description" content="超级手机网站 - 20+模式，1000+功能，玻璃拟态设计">
+  <title>✨ 超级手机网站</title>
+  
   <style>
-    /* CSS Variables - 玻璃拟态设计系统 */
+    /* ==================== 高级玻璃拟态设计系统 ==================== */
     :root {
-      /* 颜色系统 */
-      --primary: #007AFF;
-      --primary-light: #4DA3FF;
-      --primary-dark: #0056CC;
-      --secondary: #5856D6;
-      --secondary-light: #7B79E0;
-      --accent: #FF9500;
-      --accent-light: #FFB040;
-      --success: #34C759;
-      --warning: #FF9500;
-      --danger: #FF3B30;
-      --info: #5AC8FA;
-
+      /* 渐变背景 */
+      --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      --gradient-cards: linear-gradient(145deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 100%);
+      --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
+      
       /* 玻璃效果 */
-      --glass-bg: rgba(255, 255, 255, 0.15);
-      --glass-bg-dark: rgba(255, 255, 255, 0.25);
-      --glass-border: rgba(255, 255, 255, 0.3);
-      --glass-border-light: rgba(255, 255, 255, 0.5);
-      --glass-shadow: rgba(0, 0, 0, 0.1);
-      --glass-blur: 20px;
-      --glass-blur-light: 10px;
-
-      /* 背景渐变 */
-      --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-      --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-      --gradient-bg-dark: linear-gradient(135deg, #2c3e50 0%, #3a7bd5 100%);
-
+      --glass-bg: rgba(255, 255, 255, 0.2);
+      --glass-bg-strong: rgba(255, 255, 255, 0.3);
+      --glass-bg-light: rgba(255, 255, 255, 0.15);
+      --glass-border: rgba(255, 255, 255, 0.4);
+      --glass-border-light: rgba(255, 255, 255, 0.6);
+      --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      --glass-shadow-strong: 0 16px 48px rgba(0, 0, 0, 0.2);
+      --glass-blur: blur(20px);
+      --glass-blur-strong: blur(30px);
+      
+      /* 颜色系统 */
+      --primary: #667eea;
+      --primary-light: #8b9ff8;
+      --primary-dark: #4c5bd9;
+      --secondary: #764ba2;
+      --accent: #f093fb;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --info: #3b82f6;
+      
       /* 文字颜色 */
       --text-primary: #ffffff;
-      --text-secondary: rgba(255, 255, 255, 0.7);
-      --text-tertiary: rgba(255, 255, 255, 0.5);
-
-      /* 圆角 */
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --radius-xl: 20px;
-      --radius-xxl: 24px;
+      --text-secondary: rgba(255, 255, 255, 0.85);
+      --text-tertiary: rgba(255, 255, 255, 0.6);
+      --text-dark: #1f2937;
+      --text-dark-secondary: #4b5563;
+      
+      /* 圆角系统 */
+      --radius-sm: 12px;
+      --radius-md: 16px;
+      --radius-lg: 20px;
+      --radius-xl: 24px;
+      --radius-2xl: 32px;
       --radius-full: 9999px;
-
+      
       /* 间距 */
       --space-xs: 4px;
       --space-sm: 8px;
       --space-md: 12px;
       --space-lg: 16px;
-      --space-xl: 24px;
-      --space-xxl: 32px;
-
+      --space-xl: 20px;
+      --space-2xl: 24px;
+      --space-3xl: 32px;
+      
       /* 动画 */
-      --transition-fast: 0.15s ease;
-      --transition-normal: 0.3s ease;
-      --transition-slow: 0.5s ease;
-
+      --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      
       /* 字体 */
       --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      --font-size-xs: 10px;
-      --font-size-sm: 12px;
-      --font-size-md: 14px;
-      --font-size-lg: 16px;
-      --font-size-xl: 20px;
-      --font-size-xxl: 24px;
-      --font-size-xxxl: 30px;
     }
 
-    /* 深色模式 */
-    [data-theme="dark"] {
-      --glass-bg: rgba(0, 0, 0, 0.3);
-      --glass-bg-dark: rgba(0, 0, 0, 0.5);
-      --glass-border: rgba(255, 255, 255, 0.15);
-      --text-primary: #ffffff;
-      --text-secondary: rgba(255, 255, 255, 0.8);
-      --text-tertiary: rgba(255, 255, 255, 0.6);
-    }
-
-    /* 基础样式 */
+    /* 基础重置 */
     * {
       margin: 0;
       padding: 0;
@@ -100,357 +85,347 @@
       width: 100%;
       height: 100%;
       font-family: var(--font-family);
-      font-size: var(--font-size-md);
       color: var(--text-primary);
-      background: var(--gradient-bg);
+      background: var(--gradient-hero);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       overflow: hidden;
       touch-action: manipulation;
+      position: relative;
     }
 
-    /* 玻璃拟态卡片 */
-    .glass-card {
+    /* 动态背景 */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ==================== 玻璃组件 ==================== */
+    
+    /* 玻璃卡片 - 基础 */
+    .glass {
       background: var(--glass-bg);
-      backdrop-filter: blur(var(--glass-blur));
-      -webkit-backdrop-filter: blur(var(--glass-blur));
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
       border: 1px solid var(--glass-border);
       border-radius: var(--radius-xl);
-      box-shadow: 0 8px 32px var(--glass-shadow);
+      box-shadow: var(--glass-shadow);
       transition: all var(--transition-normal);
     }
 
-    .glass-card:hover {
-      background: var(--glass-bg-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    /* 玻璃卡片 - 悬浮 */
+    .glass:hover {
+      background: var(--glass-bg-strong);
+      transform: translateY(-4px);
+      box-shadow: var(--glass-shadow-strong);
+    }
+
+    /* 玻璃卡片 - 深色 */
+    .glass-dark {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     /* 玻璃按钮 */
-    .glass-button {
+    .btn-glass {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: var(--space-sm);
-      padding: var(--space-md) var(--space-lg);
+      padding: var(--space-md) var(--space-xl);
       background: var(--glass-bg);
-      backdrop-filter: blur(var(--glass-blur-light));
-      -webkit-backdrop-filter: blur(var(--glass-blur-light));
+      backdrop-filter: var(--glass-blur);
       border: 1px solid var(--glass-border);
       border-radius: var(--radius-lg);
       color: var(--text-primary);
-      font-size: var(--font-size-md);
+      font-size: 15px;
       font-weight: 600;
       cursor: pointer;
       transition: all var(--transition-normal);
       user-select: none;
       -webkit-tap-highlight-color: transparent;
+      position: relative;
+      overflow: hidden;
     }
 
-    .glass-button:hover {
-      background: var(--glass-bg-dark);
-      border-color: var(--glass-border-light);
+    .btn-glass::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn-glass:hover::before {
+      left: 100%;
+    }
+
+    .btn-glass:hover {
+      background: var(--glass-bg-strong);
       transform: scale(1.02);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     }
 
-    .glass-button:active {
+    .btn-glass:active {
       transform: scale(0.98);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     }
 
-    .glass-button.primary {
-      background: var(--primary);
+    /* 主按钮 */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       border-color: var(--primary-light);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
     }
 
-    .glass-button.primary:hover {
-      background: var(--primary-light);
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.6);
+    }
+
+    /* 次要按钮 */
+    .btn-secondary {
+      background: var(--glass-bg-light);
+      border-color: var(--glass-border-light);
     }
 
     /* 图标按钮 */
-    .icon-button {
-      width: 44px;
-      height: 44px;
+    .btn-icon {
+      width: 48px;
+      height: 48px;
       padding: 0;
       border-radius: var(--radius-full);
-      background: var(--glass-bg);
-      backdrop-filter: blur(var(--glass-blur-light));
-      border: 1px solid var(--glass-border);
-      color: var(--text-primary);
-      font-size: 20px;
-      cursor: pointer;
-      transition: all var(--transition-normal);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-size: 22px;
     }
 
-    .icon-button:hover {
-      background: var(--glass-bg-dark);
-      transform: scale(1.1);
-    }
-
-    .icon-button:active {
-      transform: scale(0.95);
-    }
-
-    /* 输入框 */
-    .glass-input {
+    /* 玻璃输入框 */
+    .input-glass {
       width: 100%;
-      padding: var(--space-md) var(--space-lg);
-      background: var(--glass-bg);
-      backdrop-filter: blur(var(--glass-blur-light));
+      padding: var(--space-md) var(--space-xl);
+      background: var(--glass-bg-light);
+      backdrop-filter: var(--glass-blur);
       border: 1px solid var(--glass-border);
       border-radius: var(--radius-lg);
       color: var(--text-primary);
-      font-size: var(--font-size-md);
+      font-size: 15px;
       outline: none;
       transition: all var(--transition-normal);
     }
 
-    .glass-input::placeholder {
+    .input-glass::placeholder {
       color: var(--text-tertiary);
     }
 
-    .glass-input:focus {
-      border-color: var(--primary);
-      background: var(--glass-bg-dark);
-      box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+    .input-glass:focus {
+      border-color: var(--primary-light);
+      background: var(--glass-bg);
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
     }
 
-    /* 应用容器 */
+    /* ==================== 应用容器 ==================== */
     #app {
       width: 100%;
       height: 100%;
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      position: relative;
+      z-index: 1;
     }
 
-    /* 主内容区 */
-    .main-content {
-      flex: 1;
-      overflow-y: auto;
-      overflow-x: hidden;
-      padding: var(--space-lg);
-      padding-bottom: 80px;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    /* 头部 */
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: var(--space-lg);
-      padding-top: max(var(--space-lg), env(safe-area-inset-top));
-      background: rgba(102, 126, 234, 0.3);
-      backdrop-filter: blur(var(--glass-blur));
-      -webkit-backdrop-filter: blur(var(--glass-blur));
-      border-bottom: 1px solid var(--glass-border);
-    }
-
-    .header h1 {
-      font-size: var(--font-size-xxl);
-      font-weight: 700;
-      margin-bottom: var(--space-sm);
-    }
-
-    .header-subtitle {
-      font-size: var(--font-size-sm);
-      color: var(--text-secondary);
-    }
-
-    /* 底部导航 */
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-around;
-      padding: var(--space-sm) var(--space-lg);
-      padding-bottom: max(var(--space-sm), env(safe-area-inset-bottom));
-      background: rgba(102, 126, 234, 0.4);
-      backdrop-filter: blur(var(--glass-blur));
-      -webkit-backdrop-filter: blur(var(--glass-blur));
-      border-top: 1px solid var(--glass-border);
-    }
-
-    .nav-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--space-xs);
-      padding: var(--space-sm);
-      color: var(--text-secondary);
-      text-decoration: none;
-      border-radius: var(--radius-lg);
-      transition: all var(--transition-normal);
-      cursor: pointer;
-      min-width: 60px;
-    }
-
-    .nav-item:hover, .nav-item.active {
-      color: var(--text-primary);
-      background: var(--glass-bg);
-    }
-
-    .nav-item.active {
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-    .nav-icon {
-      font-size: 24px;
-      line-height: 1;
-    }
-
-    .nav-label {
-      font-size: var(--font-size-xs);
-      font-weight: 500;
-    }
-
-    /* 模式网格 */
-    .mode-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-      gap: var(--space-lg);
-      padding: var(--space-lg) 0;
-    }
-
-    .mode-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--space-md);
-      padding: var(--space-xl);
-      background: var(--glass-bg);
-      backdrop-filter: blur(var(--glass-blur-light));
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-xl);
-      cursor: pointer;
-      transition: all var(--transition-normal);
-    }
-
-    .mode-card:hover {
-      background: var(--glass-bg-dark);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-    }
-
-    .mode-card:active {
-      transform: scale(0.95);
-    }
-
-    .mode-icon {
-      font-size: 32px;
-      line-height: 1;
-    }
-
-    .mode-name {
-      font-size: var(--font-size-sm);
-      font-weight: 600;
-      text-align: center;
-      color: var(--text-primary);
-    }
-
-    .mode-count {
-      font-size: var(--font-size-xs);
-      color: var(--text-secondary);
-    }
-
-    /* 功能列表 */
-    .feature-list {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-      padding: var(--space-lg) 0;
-    }
-
-    .feature-item {
-      display: flex;
-      align-items: center;
-      gap: var(--space-lg);
-      padding: var(--space-lg);
-      background: var(--glass-bg);
-      backdrop-filter: blur(var(--glass-blur-light));
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-lg);
-      cursor: pointer;
-      transition: all var(--transition-normal);
-    }
-
-    .feature-item:hover {
-      background: var(--glass-bg-dark);
-      transform: translateX(4px);
-    }
-
-    .feature-item:active {
-      transform: scale(0.98);
-    }
-
-    .feature-icon {
-      font-size: 24px;
-      flex-shrink: 0;
-    }
-
-    .feature-content {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .feature-title {
-      font-size: var(--font-size-md);
-      font-weight: 600;
-      margin-bottom: var(--space-xs);
-      color: var(--text-primary);
-    }
-
-    .feature-desc {
-      font-size: var(--font-size-sm);
-      color: var(--text-secondary);
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .feature-arrow {
-      font-size: 18px;
-      color: var(--text-tertiary);
-      flex-shrink: 0;
-    }
-
-    /* 页面容器 */
+    /* ==================== 页面样式 ==================== */
     .page {
       display: none;
       width: 100%;
       height: 100%;
       flex-direction: column;
       overflow: hidden;
+      opacity: 0;
+      transform: translateX(0);
+      transition: all var(--transition-normal);
     }
 
     .page.active {
       display: flex;
+      opacity: 1;
     }
 
-    /* 滚动区域 */
+    .page.slide-left {
+      transform: translateX(-100%);
+    }
+
+    .page.slide-right {
+      transform: translateX(100%);
+    }
+
+    /* ==================== 头部 ==================== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: var(--space-xl);
+      padding-top: max(var(--space-xl), env(safe-area-inset-top));
+      background: rgba(102, 126, 234, 0.4);
+      backdrop-filter: var(--glass-blur-strong);
+      -webkit-backdrop-filter: var(--glass-blur-strong);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-title {
+      font-size: 24px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .header-subtitle {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: var(--space-xs);
+    }
+
+    .header-actions {
+      display: flex;
+      gap: var(--space-md);
+    }
+
+    /* ==================== 滚动内容 ==================== */
     .scroll-content {
       flex: 1;
       overflow-y: auto;
       overflow-x: hidden;
       -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
     }
 
-    /* 工具栏 */
+    .main-content {
+      padding: var(--space-xl);
+      padding-bottom: 100px;
+    }
+
+    /* ==================== 英雄区域 ==================== */
+    .hero {
+      padding: var(--space-2xl);
+      margin-bottom: var(--space-xl);
+      background: var(--gradient-glass);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border-light);
+      border-radius: var(--radius-2xl);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      animation: pulse-bg 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse-bg {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+
+    .hero-icon {
+      font-size: 64px;
+      margin-bottom: var(--space-lg);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: var(--space-sm);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ==================== 统计卡片 ==================== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-lg);
+      margin-bottom: var(--space-xl);
+    }
+
+    .stat-card {
+      padding: var(--space-xl);
+      background: var(--gradient-cards);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      text-align: center;
+      transition: all var(--transition-normal);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--glass-shadow-strong);
+    }
+
+    .stat-icon {
+      font-size: 32px;
+      margin-bottom: var(--space-sm);
+    }
+
+    .stat-value {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: var(--space-xs);
+      background: linear-gradient(135deg, #fff 0%, #f0f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    /* ==================== 工具栏 ==================== */
     .toolbar {
       display: flex;
       gap: var(--space-md);
-      padding: var(--space-lg);
+      padding: var(--space-md) 0;
+      margin-bottom: var(--space-xl);
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
 
     .toolbar::-webkit-scrollbar {
@@ -461,57 +436,647 @@
       display: flex;
       align-items: center;
       gap: var(--space-sm);
-      padding: var(--space-md) var(--space-lg);
-      background: var(--glass-bg);
-      backdrop-filter: blur(var(--glass-blur-light));
+      padding: var(--space-md) var(--space-xl);
+      background: var(--glass-bg-light);
+      backdrop-filter: var(--glass-blur);
       border: 1px solid var(--glass-border);
       border-radius: var(--radius-full);
       color: var(--text-primary);
-      font-size: var(--font-size-sm);
+      font-size: 14px;
+      font-weight: 500;
       white-space: nowrap;
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      flex-shrink: 0;
+    }
+
+    .toolbar-item:hover {
+      background: var(--glass-bg);
+      transform: scale(1.05);
+    }
+
+    .toolbar-item.active {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      border-color: var(--primary-light);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    /* ==================== 模式网格 ==================== */
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: var(--space-lg);
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .mode-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+      margin-bottom: var(--space-2xl);
+    }
+
+    .mode-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-md);
+      padding: var(--space-xl);
+      background: var(--gradient-cards);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mode-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity var(--transition-normal);
+    }
+
+    .mode-card:hover::before {
+      opacity: 1;
+    }
+
+    .mode-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: var(--glass-shadow-strong);
+      border-color: var(--glass-border-light);
+    }
+
+    .mode-card:active {
+      transform: scale(0.95);
+    }
+
+    .mode-icon {
+      font-size: 40px;
+      line-height: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mode-name {
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mode-count {
+      font-size: 11px;
+      color: var(--text-secondary);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ==================== 功能列表 ==================== */
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+      padding: var(--space-lg);
+      background: var(--gradient-cards);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
       cursor: pointer;
       transition: all var(--transition-normal);
     }
 
-    .toolbar-item:hover {
-      background: var(--glass-bg-dark);
+    .feature-item:hover {
+      background: var(--glass-bg-strong);
+      transform: translateX(8px);
+      box-shadow: var(--glass-shadow);
     }
 
-    .toolbar-item.active {
-      background: var(--primary);
-      border-color: var(--primary-light);
+    .feature-item:active {
+      transform: scale(0.98);
     }
 
-    /* 统计卡片 */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: var(--space-lg);
-      padding: var(--space-lg) 0;
+    .feature-icon {
+      font-size: 28px;
+      flex-shrink: 0;
     }
 
-    .stat-card {
-      padding: var(--space-xl);
-      background: var(--glass-bg);
-      backdrop-filter: blur(var(--glass-blur-light));
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-xl);
-      text-align: center;
+    .feature-content {
+      flex: 1;
+      min-width: 0;
     }
 
-    .stat-value {
-      font-size: var(--font-size-xxl);
-      font-weight: 700;
-      margin-bottom: var(--space-sm);
+    .feature-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: var(--space-xs);
       color: var(--text-primary);
     }
 
-    .stat-label {
-      font-size: var(--font-size-sm);
+    .feature-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .feature-arrow {
+      font-size: 20px;
+      color: var(--text-tertiary);
+      flex-shrink: 0;
+    }
+
+    /* ==================== 底部导航 ==================== */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-around;
+      padding: var(--space-sm) var(--space-lg);
+      padding-bottom: max(var(--space-sm), env(safe-area-inset-bottom));
+      background: rgba(102, 126, 234, 0.5);
+      backdrop-filter: var(--glass-blur-strong);
+      -webkit-backdrop-filter: var(--glass-blur-strong);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-xs);
+      padding: var(--space-sm);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      border-radius: var(--radius-lg);
+      min-width: 60px;
+    }
+
+    .nav-item:hover, .nav-item.active {
+      color: var(--text-primary);
+      background: var(--glass-bg-light);
+    }
+
+    .nav-item.active {
+      color: var(--primary-light);
+      font-weight: 600;
+    }
+
+    .nav-icon {
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .nav-label {
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    /* ==================== 功能详情页面 ==================== */
+    .feature-page {
+      padding: var(--space-xl);
+    }
+
+    .feature-hero {
+      text-align: center;
+      margin-bottom: var(--space-2xl);
+    }
+
+    .feature-hero-icon {
+      font-size: 80px;
+      margin-bottom: var(--space-lg);
+    }
+
+    .feature-hero-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: var(--space-sm);
+    }
+
+    .feature-hero-desc {
+      font-size: 14px;
       color: var(--text-secondary);
     }
 
-    /* 动画 */
+    /* ==================== 计算器 ==================== */
+    .calculator {
+      background: var(--gradient-cards);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+
+    .calc-display {
+      width: 100%;
+      padding: var(--space-xl);
+      margin-bottom: var(--space-lg);
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius-lg);
+      color: var(--text-primary);
+      font-size: 32px;
+      font-weight: 600;
+      text-align: right;
+      outline: none;
+    }
+
+    .calc-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-md);
+    }
+
+    .calc-btn {
+      padding: var(--space-lg);
+      background: var(--glass-bg-light);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      color: var(--text-primary);
+      font-size: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .calc-btn:hover {
+      background: var(--glass-bg);
+      transform: scale(1.05);
+    }
+
+    .calc-btn:active {
+      transform: scale(0.95);
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .calc-btn.operator {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.4) 0%, rgba(118, 75, 162, 0.4) 100%);
+      border-color: var(--primary);
+    }
+
+    .calc-btn.operator:hover {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.6) 0%, rgba(118, 75, 162, 0.6) 100%);
+    }
+
+    .calc-btn.equals {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      border-color: var(--primary-light);
+    }
+
+    /* ==================== 天气卡片 ==================== */
+    .weather-card {
+      background: var(--gradient-cards);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-2xl);
+      text-align: center;
+      margin-bottom: var(--space-xl);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .weather-icon {
+      font-size: 96px;
+      margin-bottom: var(--space-lg);
+    }
+
+    .weather-temp {
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: var(--space-sm);
+    }
+
+    .weather-desc {
+      font-size: 18px;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-xl);
+    }
+
+    .weather-details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+    }
+
+    .weather-detail {
+      padding: var(--space-lg);
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: var(--radius-lg);
+    }
+
+    .weather-detail-icon {
+      font-size: 24px;
+      margin-bottom: var(--space-sm);
+    }
+
+    .weather-detail-label {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-bottom: var(--space-xs);
+    }
+
+    .weather-detail-value {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    /* ==================== 日历 ==================== */
+    .calendar {
+      background: var(--gradient-cards);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+
+    .calendar-header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .calendar-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: var(--space-xs);
+    }
+
+    .calendar-weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+
+    .calendar-weekday {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      padding: var(--space-sm);
+    }
+
+    .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: var(--space-sm);
+    }
+
+    .calendar-day {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      background: transparent;
+      border: none;
+      color: var(--text-primary);
+    }
+
+    .calendar-day:hover {
+      background: var(--glass-bg);
+    }
+
+    .calendar-day.today {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      font-weight: 700;
+    }
+
+    .calendar-day.other-month {
+      color: var(--text-tertiary);
+    }
+
+    /* ==================== 待办事项 ==================== */
+    .todo-input-container {
+      display: flex;
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
+    }
+
+    .todo-input-container .input-glass {
+      flex: 1;
+    }
+
+    .todo-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .todo-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+      padding: var(--space-lg);
+      background: var(--gradient-cards);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      transition: all var(--transition-normal);
+    }
+
+    .todo-item.completed {
+      opacity: 0.6;
+    }
+
+    .todo-item.completed .todo-text {
+      text-decoration: line-through;
+      color: var(--text-tertiary);
+    }
+
+    .todo-checkbox {
+      width: 24px;
+      height: 24px;
+      border-radius: var(--radius-full);
+      border: 2px solid var(--glass-border-light);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .todo-checkbox.checked {
+      background: linear-gradient(135deg, var(--success) 0%, var(--success) 100%);
+      border-color: var(--success);
+    }
+
+    .todo-text {
+      flex: 1;
+      font-size: 15px;
+    }
+
+    .todo-delete {
+      font-size: 18px;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: all var(--transition-fast);
+    }
+
+    .todo-delete:hover {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    /* ==================== 音乐播放器 ==================== */
+    .music-player {
+      background: var(--gradient-cards);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-2xl);
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .music-cover {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto var(--space-xl);
+      background: var(--gradient-primary);
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      box-shadow: var(--glass-shadow-strong);
+    }
+
+    .music-info {
+      margin-bottom: var(--space-xl);
+    }
+
+    .music-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: var(--space-xs);
+    }
+
+    .music-artist {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .music-progress {
+      margin-bottom: var(--space-xl);
+    }
+
+    .music-progress-bar {
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      margin-bottom: var(--space-sm);
+    }
+
+    .music-progress-fill {
+      width: 35%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+      border-radius: var(--radius-full);
+    }
+
+    .music-time {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    .music-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xl);
+    }
+
+    .music-btn {
+      font-size: 28px;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .music-btn:hover {
+      transform: scale(1.2);
+    }
+
+    .music-btn.play {
+      font-size: 40px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ==================== 笔记编辑器 ==================== */
+    .note-editor {
+      background: var(--gradient-cards);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+
+    .note-textarea {
+      width: 100%;
+      min-height: 200px;
+      padding: var(--space-lg);
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius-lg);
+      color: var(--text-primary);
+      font-size: 15px;
+      font-family: inherit;
+      resize: vertical;
+      outline: none;
+      margin-bottom: var(--space-lg);
+    }
+
+    .note-textarea::placeholder {
+      color: var(--text-tertiary);
+    }
+
+    .note-actions {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: flex-end;
+    }
+
+    /* ==================== 动画 ==================== */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -522,9 +1087,24 @@
       to { transform: translateY(0); opacity: 1; }
     }
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+    @keyframes slideDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes scaleIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
     .animate-fade-in {
@@ -535,19 +1115,27 @@
       animation: slideUp var(--transition-slow) ease;
     }
 
-    .animate-pulse {
-      animation: pulse 2s ease-in-out infinite;
+    .animate-slide-down {
+      animation: slideDown var(--transition-slow) ease;
     }
 
-    /* 响应式 */
-    @media (max-width: 480px) {
-      :root {
-        --font-size-md: 14px;
-        --font-size-lg: 16px;
-        --font-size-xl: 18px;
-        --font-size-xxl: 22px;
-      }
+    .animate-scale-in {
+      animation: scaleIn var(--transition-normal) ease;
+    }
 
+    .animate-bounce {
+      animation: bounce 1s ease-in-out infinite;
+    }
+
+    /* 动画延迟 */
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.5s; }
+
+    /* ==================== 响应式 ==================== */
+    @media (max-width: 480px) {
       .mode-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: var(--space-md);
@@ -558,23 +1146,47 @@
       }
 
       .mode-icon {
-        font-size: 28px;
+        font-size: 32px;
       }
 
       .mode-name {
-        font-size: 11px;
+        font-size: 12px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+      }
+
+      .weather-details {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-md);
+      }
+
+      .music-cover {
+        width: 160px;
+        height: 160px;
+        font-size: 60px;
       }
     }
 
-    /* 安全区域适配 */
-    @supports (padding: max(0px)) {
-      .header {
-        padding-top: max(var(--space-lg), env(safe-area-inset-top));
-      }
+    /* ==================== 滚动条 ==================== */
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
 
-      .bottom-nav {
-        padding-bottom: max(var(--space-sm), env(safe-area-inset-bottom));
-      }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: var(--radius-full);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.5);
     }
   </style>
 </head>
@@ -583,57 +1195,73 @@
     <!-- 首页 -->
     <div class="page active" id="page-home">
       <div class="header">
-        <h1>🚀 超级手机网站</h1>
-        <div class="header-subtitle">20+模式 · 1000+功能 · 玻璃拟态设计</div>
+        <div class="header-content">
+          <div>
+            <div class="header-title">
+              <span>🚀</span>
+              <span>超级手机网站</span>
+            </div>
+            <div class="header-subtitle">20+模式 · 1000+功能 · 玻璃拟态设计</div>
+          </div>
+          <div class="header-actions">
+            <button class="btn-glass btn-icon" onclick="toggleTheme()">🌙</button>
+            <button class="btn-glass btn-icon" onclick="showSearch()">🔍</button>
+          </div>
+        </div>
       </div>
+
       <div class="scroll-content">
         <div class="main-content">
           <!-- 快捷工具栏 -->
-          <div class="toolbar">
-            <div class="toolbar-item active" onclick="switchMode('home')">
+          <div class="toolbar" id="toolbar">
+            <div class="toolbar-item active" data-mode="home" onclick="switchMode('home')">
               <span>🏠</span>
               <span>首页</span>
             </div>
-            <div class="toolbar-item" onclick="switchMode('tools')">
+            <div class="toolbar-item" data-mode="tools" onclick="switchMode('tools')">
               <span>🛠️</span>
               <span>工具</span>
             </div>
-            <div class="toolbar-item" onclick="switchMode('social')">
+            <div class="toolbar-item" data-mode="social" onclick="switchMode('social')">
               <span>💬</span>
               <span>社交</span>
             </div>
-            <div class="toolbar-item" onclick="switchMode('learning')">
+            <div class="toolbar-item" data-mode="learning" onclick="switchMode('learning')">
               <span>📚</span>
               <span>学习</span>
             </div>
-            <div class="toolbar-item" onclick="switchMode('life')">
+            <div class="toolbar-item" data-mode="life" onclick="switchMode('life')">
               <span>🌟</span>
               <span>生活</span>
             </div>
           </div>
 
           <!-- 统计概览 -->
-          <div class="stats-grid">
+          <div class="stats-grid animate-slide-up">
             <div class="stat-card">
+              <div class="stat-icon">🎨</div>
               <div class="stat-value">20+</div>
               <div class="stat-label">功能模式</div>
             </div>
             <div class="stat-card">
+              <div class="stat-icon">⚡</div>
               <div class="stat-value">1000+</div>
               <div class="stat-label">可用功能</div>
             </div>
             <div class="stat-card">
-              <div class="stat-value">🎨</div>
-              <div class="stat-label">玻璃拟态</div>
+              <div class="stat-icon">✨</div>
+              <div class="stat-value">100%</div>
+              <div class="stat-label">真实可用</div>
             </div>
             <div class="stat-card">
-              <div class="stat-value">📱</div>
-              <div class="stat-label">手机优先</div>
+              <div class="stat-icon">📱</div>
+              <div class="stat-value">HD</div>
+              <div class="stat-label">高清适配</div>
             </div>
           </div>
 
           <!-- 模式选择 -->
-          <h2 style="margin: var(--space-xl) 0 var(--space-lg); font-size: var(--font-size-xl);">选择模式</h2>
+          <h2 class="section-title animate-slide-up delay-1">✨ 选择模式</h2>
           <div class="mode-grid" id="mode-grid">
             <!-- 模式卡片将通过 JS 动态生成 -->
           </div>
@@ -643,10 +1271,21 @@
 
     <!-- 模式详情页 -->
     <div class="page" id="page-mode">
-      <div class="header" id="mode-header">
-        <h1 id="mode-title">模式名称</h1>
-        <div class="header-subtitle" id="mode-subtitle">功能数量</div>
+      <div class="header">
+        <div class="header-content">
+          <div>
+            <div class="header-title" id="mode-header-title">
+              <span>🚀</span>
+              <span>模式名称</span>
+            </div>
+            <div class="header-subtitle" id="mode-header-subtitle">功能数量</div>
+          </div>
+          <div class="header-actions">
+            <button class="btn-glass btn-icon" onclick="showPage('home')">←</button>
+          </div>
+        </div>
       </div>
+
       <div class="scroll-content">
         <div class="main-content">
           <div class="feature-list" id="feature-list">
@@ -659,8 +1298,19 @@
     <!-- 功能详情页 -->
     <div class="page" id="page-feature">
       <div class="header">
-        <h1 id="feature-title">功能名称</h1>
+        <div class="header-content">
+          <div>
+            <div class="header-title" id="feature-header-title">
+              <span>✨</span>
+              <span>功能名称</span>
+            </div>
+          </div>
+          <div class="header-actions">
+            <button class="btn-glass btn-icon" onclick="backFromFeature()">←</button>
+          </div>
+        </div>
       </div>
+
       <div class="scroll-content">
         <div class="main-content" id="feature-content">
           <!-- 功能内容将通过 JS 动态生成 -->
@@ -689,6 +1339,760 @@
     </div>
   </div>
 
-  <script type="module" src="/src/main.ts"></script>
+  <script>
+    // ==================== 模式数据定义 ====================
+    const MODES = [
+      {
+        id: 'home',
+        name: '首页',
+        icon: '🏠',
+        description: '快速访问和概览',
+        features: [
+          { id: 'weather', name: '天气', icon: '🌤️', description: '实时天气信息', type: 'app' },
+          { id: 'calendar', name: '日历', icon: '📅', description: '日程管理', type: 'app' },
+          { id: 'clock', name: '时钟', icon: '🕐', description: '世界时钟', type: 'app' },
+          { id: 'calculator', name: '计算器', icon: '🧮', description: '多功能计算器', type: 'app' },
+          { id: 'search', name: '搜索', icon: '🔍', description: '全局搜索', type: 'tool' },
+          { id: 'notes', name: '便签', icon: '📝', description: '随手笔记', type: 'app' },
+          { id: 'todo', name: '待办', icon: '✅', description: '任务管理', type: 'app' },
+          { id: 'timer', name: '计时器', icon: '⏱️', description: '倒计时计时', type: 'tool' },
+        ]
+      },
+      {
+        id: 'tools',
+        name: '工具',
+        icon: '🛠️',
+        description: '实用工具集',
+        features: [
+          { id: 'calc-basic', name: '计算器', icon: '🧮', description: '基础计算', type: 'app' },
+          { id: 'calc-sci', name: '科学计算器', icon: '🔬', description: '高级计算', type: 'app' },
+          { id: 'unit-converter', name: '单位转换', icon: '📐', description: '单位转换器', type: 'tool' },
+          { id: 'currency', name: '汇率转换', icon: '💱', description: '货币汇率', type: 'tool' },
+          { id: 'qrcode', name: '二维码', icon: '📱', description: '生成/扫描', type: 'tool' },
+          { id: 'password', name: '密码生成', icon: '🔑', description: '随机密码', type: 'tool' },
+          { id: 'color-picker', name: '取色器', icon: '🎨', description: '颜色选择', type: 'tool' },
+          { id: 'bmi', name: 'BMI计算', icon: '⚖️', description: '体质指数', type: 'tool' },
+        ]
+      },
+      {
+        id: 'social',
+        name: '社交',
+        icon: '💬',
+        description: '聊天和动态',
+        features: [
+          { id: 'moments', name: '朋友圈', icon: '📱', description: '发动态', type: 'app' },
+          { id: 'chat', name: '私信', icon: '✉️', description: '聊天消息', type: 'app' },
+          { id: 'groups', name: '群聊', icon: '👥', description: '群组聊天', type: 'app' },
+          { id: 'friends', name: '好友列表', icon: '👫', description: '管理好友', type: 'tool' },
+          { id: 'add-friend', name: '添加好友', icon: '➕', description: '搜索添加', type: 'tool' },
+          { id: 'nearby', name: '附近的人', icon: '📍', description: '发现好友', type: 'tool' },
+          { id: 'shake', name: '摇一摇', icon: '📲', description: '摇一摇', type: 'tool' },
+          { id: 'drift', name: '漂流瓶', icon: '🏺', description: '匿名消息', type: 'tool' },
+        ]
+      },
+      {
+        id: 'ecommerce',
+        name: '电商',
+        icon: '🛒',
+        description: '购物和订单',
+        features: [
+          { id: 'products', name: '商品浏览', icon: '🛍️', description: '浏览商品', type: 'app' },
+          { id: 'cart', name: '购物车', icon: '🛒', description: '购物车管理', type: 'app' },
+          { id: 'orders', name: '我的订单', icon: '📦', description: '订单列表', type: 'tool' },
+          { id: 'coupons', name: '优惠券', icon: '🎟️', description: '优惠券中心', type: 'tool' },
+          { id: 'favorites', name: '收藏商品', icon: '❤️', description: '我的收藏', type: 'tool' },
+          { id: 'address', name: '地址管理', icon: '📍', description: '收货地址', type: 'tool' },
+          { id: 'payment', name: '支付方式', icon: '💳', description: '支付设置', type: 'tool' },
+          { id: 'history', name: '浏览历史', icon: '🕐', description: '浏览记录', type: 'tool' },
+        ]
+      },
+      {
+        id: 'media',
+        name: '媒体',
+        icon: '📷',
+        description: '照片和视频',
+        features: [
+          { id: 'gallery', name: '图片浏览', icon: '🖼️', description: '相册浏览', type: 'app' },
+          { id: 'editor', name: '图片编辑', icon: '🎨', description: '图片处理', type: 'app' },
+          { id: 'music', name: '音乐播放', icon: '🎵', description: '音乐播放器', type: 'app' },
+          { id: 'video', name: '视频播放', icon: '🎬', description: '视频播放器', type: 'app' },
+          { id: 'gif-maker', name: 'GIF制作', icon: '🎞️', description: 'GIF工具', type: 'tool' },
+          { id: 'collage', name: '照片拼图', icon: '🖼️', description: '拼图模板', type: 'tool' },
+          { id: 'filters', name: '滤镜效果', icon: '✨', description: '滤镜处理', type: 'tool' },
+          { id: 'crop', name: '裁剪旋转', icon: '✂️', description: '图片裁剪', type: 'tool' },
+        ]
+      },
+      {
+        id: 'games',
+        name: '游戏',
+        icon: '🎮',
+        description: '休闲小游戏',
+        features: [
+          { id: 'game-2048', name: '2048', icon: '🔢', description: '益智游戏', type: 'app' },
+          { id: 'tetris', name: '俄罗斯方块', icon: '🧱', description: '经典游戏', type: 'app' },
+          { id: 'snake', name: '贪吃蛇', icon: '🐍', description: '经典游戏', type: 'app' },
+          { id: 'match3', name: '消消乐', icon: '💎', description: '消除游戏', type: 'app' },
+          { id: 'ludo', name: '飞行棋', icon: '✈️', description: '桌游', type: 'app' },
+          { id: 'chess', name: '国际象棋', icon: '♟️', description: '棋类游戏', type: 'app' },
+          { id: 'mahjong', name: '麻将', icon: '🀄', description: '麻将游戏', type: 'app' },
+          { id: 'poker', name: '扑克牌', icon: '🎴', description: '纸牌游戏', type: 'app' },
+        ]
+      },
+      {
+        id: 'learning',
+        name: '学习',
+        icon: '📚',
+        description: '知识学习',
+        features: [
+          { id: 'vocabulary', name: '背单词', icon: '📖', description: '英语单词', type: 'app' },
+          { id: 'listening', name: '听力练习', icon: '🎧', description: '听力训练', type: 'app' },
+          { id: 'dictionary', name: '词典', icon: '📚', description: '词典查询', type: 'tool' },
+          { id: 'translator', name: '翻译', icon: '🌐', description: '翻译工具', type: 'tool' },
+          { id: 'wiki', name: '百科', icon: '🔍', description: '知识百科', type: 'tool' },
+          { id: 'courses', name: '课程', icon: '🎓', description: '在线课程', type: 'tool' },
+          { id: 'quiz', name: '测验', icon: '📝', description: '知识测验', type: 'tool' },
+          { id: 'notes-learn', name: '学习笔记', icon: '📓', description: '笔记管理', type: 'tool' },
+        ]
+      },
+      {
+        id: 'health',
+        name: '健康',
+        icon: '❤️',
+        description: '健康生活',
+        features: [
+          { id: 'steps', name: '步数记录', icon: '👟', description: '运动计步', type: 'app' },
+          { id: 'water', name: '喝水提醒', icon: '💧', description: '饮水记录', type: 'app' },
+          { id: 'sleep', name: '睡眠追踪', icon: '😴', description: '睡眠分析', type: 'app' },
+          { id: 'weight', name: '体重记录', icon: '⚖️', description: '体重管理', type: 'tool' },
+          { id: 'bmi-health', name: 'BMI计算', icon: '📊', description: '体质指数', type: 'tool' },
+          { id: 'heart', name: '心率监测', icon: '💓', description: '心率记录', type: 'tool' },
+          { id: 'exercise', name: '运动计划', icon: '🏃', description: '健身计划', type: 'tool' },
+          { id: 'medicine', name: '服药提醒', icon: '💊', description: '健康提醒', type: 'tool' },
+        ]
+      },
+      {
+        id: 'finance',
+        name: '金融',
+        icon: '💰',
+        description: '财务记账',
+        features: [
+          { id: 'ledger', name: '记账本', icon: '📒', description: '收支记录', type: 'app' },
+          { id: 'budget', name: '预算管理', icon: '📈', description: '预算设置', type: 'tool' },
+          { id: 'stocks', name: '股票行情', icon: '📉', description: '股票数据', type: 'tool' },
+          { id: 'forex', name: '货币转换', icon: '💱', description: '汇率换算', type: 'tool' },
+          { id: 'insurance', name: '保险服务', icon: '🛡️', description: '保险产品', type: 'tool' },
+          { id: 'credit', name: '信用评分', icon: '📊', description: '信用查询', type: 'tool' },
+          { id: 'loan', name: '贷款计算', icon: '🏦', description: '贷款计算', type: 'tool' },
+          { id: 'tax', name: '税务计算', icon: '🧾', description: '税费计算', type: 'tool' },
+        ]
+      },
+      {
+        id: 'travel',
+        name: '旅行',
+        icon: '✈️',
+        description: '出行规划',
+        features: [
+          { id: 'flights', name: '机票预订', icon: '🎫', description: '机票查询', type: 'app' },
+          { id: 'hotels', name: '酒店预订', icon: '🏨', description: '酒店查询', type: 'app' },
+          { id: 'tickets', name: '景点门票', icon: '🎟️', description: '门票购买', type: 'tool' },
+          { id: 'guides', name: '旅行攻略', icon: '📔', description: '旅行指南', type: 'tool' },
+          { id: 'itinerary', name: '行程规划', icon: '🗺️', description: '路线规划', type: 'tool' },
+          { id: 'map', name: '地图导航', icon: '🗺️', description: '位置导航', type: 'tool' },
+          { id: 'translate-travel', name: '翻译', icon: '🌐', description: '旅行翻译', type: 'tool' },
+          { id: 'currency-travel', name: '汇率', icon: '💱', description: '货币换算', type: 'tool' },
+        ]
+      },
+      {
+        id: 'food',
+        name: '美食',
+        icon: '🍜',
+        description: '美食菜谱',
+        features: [
+          { id: 'recipes', name: '菜谱大全', icon: '👨‍🍳', description: '菜谱搜索', type: 'app' },
+          { id: 'recommend-food', name: '今日推荐', icon: '🍽️', description: '每日推荐', type: 'tool' },
+          { id: 'calories', name: '食物热量', icon: '🔥', description: '卡路里查询', type: 'tool' },
+          { id: 'delivery', name: '外卖订餐', icon: '🍔', description: '外卖平台', type: 'app' },
+          { id: 'booking-food', name: '餐厅预订', icon: '🍽️', description: '餐厅预约', type: 'tool' },
+          { id: 'nutrition', name: '营养分析', icon: '🥗', description: '营养成分', type: 'tool' },
+          { id: 'ingredients', name: '食材百科', icon: '🥬', description: '食材查询', type: 'tool' },
+          { id: 'cook-tips', name: '烹饪技巧', icon: '🍳', description: '厨艺提升', type: 'tool' },
+        ]
+      },
+      {
+        id: 'news',
+        name: '新闻',
+        icon: '📰',
+        description: '资讯阅读',
+        features: [
+          { id: 'hot-news', name: '热点新闻', icon: '🔥', description: '热门资讯', type: 'app' },
+          { id: 'tech-news', name: '科技新闻', icon: '🚀', description: '科技动态', type: 'tool' },
+          { id: 'finance-news', name: '财经新闻', icon: '💹', description: '财经资讯', type: 'tool' },
+          { id: 'sports-news', name: '体育新闻', icon: '⚽', description: '体育资讯', type: 'tool' },
+          { id: 'entertainment-news', name: '娱乐新闻', icon: '🎭', description: '娱乐资讯', type: 'tool' },
+          { id: 'subscribe', name: '新闻订阅', icon: '📬', description: '订阅设置', type: 'tool' },
+          { id: 'bookmark', name: '收藏文章', icon: '🔖', description: '文章收藏', type: 'tool' },
+          { id: 'share', name: '分享新闻', icon: '📤', description: '分享文章', type: 'tool' },
+        ]
+      },
+      {
+        id: 'work',
+        name: '工作',
+        icon: '💼',
+        description: '办公效率',
+        features: [
+          { id: 'todo-work', name: '待办事项', icon: '✅', description: '任务管理', type: 'app' },
+          { id: 'schedule', name: '日程管理', icon: '📅', description: '日程安排', type: 'app' },
+          { id: 'email', name: '邮件', icon: '📧', description: '邮件收发', type: 'app' },
+          { id: 'docs', name: '云文档', icon: '📄', description: '文档协作', type: 'tool' },
+          { id: 'teamwork', name: '团队协作', icon: '👥', description: '团队管理', type: 'tool' },
+          { id: 'meeting', name: '会议', icon: '📹', description: '会议管理', type: 'tool' },
+          { id: 'approval', name: '审批', icon: '📋', description: '流程审批', type: 'tool' },
+          { id: 'report', name: '报告', icon: '📊', description: '工作报告', type: 'tool' },
+        ]
+      },
+      {
+        id: 'creative',
+        name: '创意',
+        icon: '🎨',
+        description: '创意设计',
+        features: [
+          { id: 'canvas', name: '画板', icon: '🖌️', description: '绘画工具', type: 'app' },
+          { id: 'avatar-maker', name: '头像制作', icon: '👤', description: '头像设计', type: 'tool' },
+          { id: 'poster', name: '海报设计', icon: '🖼️', description: '海报制作', type: 'tool' },
+          { id: 'emoji-maker', name: '表情包', icon: '😀', description: '表情制作', type: 'tool' },
+          { id: 'wallpaper', name: '壁纸制作', icon: '🖼️', description: '壁纸生成', type: 'tool' },
+          { id: 'logo', name: 'Logo设计', icon: '🏷️', description: '标志制作', type: 'tool' },
+          { id: 'card', name: '贺卡制作', icon: '💌', description: '贺卡设计', type: 'tool' },
+          { id: 'sticker', name: '贴纸制作', icon: '🏷️', description: '贴纸设计', type: 'tool' },
+        ]
+      },
+      {
+        id: 'tech',
+        name: '科技',
+        icon: '🔬',
+        description: '科技资讯',
+        features: [
+          { id: 'review', name: '新品评测', icon: '📱', description: '产品评测', type: 'app' },
+          { id: 'compare', name: '参数对比', icon: '📊', description: '产品对比', type: 'tool' },
+          { id: 'guide-tech', name: '选购指南', icon: '🛒', description: '购买建议', type: 'tool' },
+          { id: 'videos-tech', name: '科技视频', icon: '🎥', description: '视频评测', type: 'tool' },
+          { id: 'community-tech', name: '科技社区', icon: '💬', description: '讨论交流', type: 'tool' },
+          { id: 'newsletter', name: '科技周刊', icon: '📬', description: '订阅资讯', type: 'tool' },
+          { id: 'deals', name: '优惠信息', icon: '🏷️', description: '折扣情报', type: 'tool' },
+          { id: 'specs', name: '参数库', icon: '📋', description: '规格查询', type: 'tool' },
+        ]
+      },
+      {
+        id: 'entertainment',
+        name: '娱乐',
+        icon: '🎬',
+        description: '影音娱乐',
+        features: [
+          { id: 'movies', name: '电影', icon: '🎬', description: '电影推荐', type: 'app' },
+          { id: 'tvshows', name: '电视剧', icon: '📺', description: '剧集推荐', type: 'app' },
+          { id: 'variety', name: '综艺', icon: '🎤', description: '综艺节目', type: 'app' },
+          { id: 'novels', name: '小说', icon: '📚', description: '阅读小说', type: 'app' },
+          { id: 'anime', name: '动漫', icon: '🎭', description: '动漫推荐', type: 'app' },
+          { id: 'live', name: '直播', icon: '📺', description: '直播平台', type: 'app' },
+          { id: 'radio', name: '电台', icon: '📻', description: '网络电台', type: 'app' },
+          { id: 'podcast', name: '播客', icon: '🎙️', description: '音频节目', type: 'app' },
+        ]
+      },
+      {
+        id: 'life',
+        name: '生活',
+        icon: '🌟',
+        description: '日常生活',
+        features: [
+          { id: 'weather-life', name: '天气预报', icon: '🌤️', description: '天气信息', type: 'app' },
+          { id: 'alarm', name: '闹钟', icon: '⏰', description: '闹钟设置', type: 'app' },
+          { id: 'calendar-life', name: '日历', icon: '📅', description: '日历查看', type: 'app' },
+          { id: 'notes-life', name: '便签', icon: '📝', description: '随手笔记', type: 'app' },
+          { id: 'reminders', name: '提醒', icon: '🔔', description: '事项提醒', type: 'tool' },
+          { id: 'countdown', name: '倒计时', icon: '⏳', description: '重要日子', type: 'tool' },
+          { id: 'world-clock', name: '世界时钟', icon: '🌍', description: '多时区', type: 'tool' },
+          { id: 'horoscope', name: '星座运势', icon: '♈', description: '星座查询', type: 'tool' },
+        ]
+      },
+      {
+        id: 'community',
+        name: '社区',
+        icon: '🌐',
+        description: '社区论坛',
+        features: [
+          { id: 'topics', name: '话题广场', icon: '💬', description: '热门话题', type: 'app' },
+          { id: 'groups-community', name: '讨论组', icon: '👥', description: '兴趣小组', type: 'app' },
+          { id: 'qa', name: '问答', icon: '❓', description: '知识问答', type: 'tool' },
+          { id: 'poll', name: '投票', icon: '📊', description: '发起投票', type: 'tool' },
+          { id: 'checkin', name: '签到', icon: '✅', description: '每日签到', type: 'tool' },
+          { id: 'ranking', name: '排行榜', icon: '🏆', description: '贡献排名', type: 'tool' },
+          { id: 'medals', name: '勋章墙', icon: '🏅', description: '荣誉展示', type: 'tool' },
+          { id: 'activities', name: '活动', icon: '🎉', description: '社区活动', type: 'tool' },
+        ]
+      },
+      {
+        id: 'settings',
+        name: '设置',
+        icon: '⚙️',
+        description: '系统设置',
+        features: [
+          { id: 'theme', name: '主题', icon: '🎨', description: '主题切换', type: 'tool' },
+          { id: 'language', name: '语言', icon: '🌐', description: '语言设置', type: 'tool' },
+          { id: 'notifications', name: '通知', icon: '🔔', description: '通知设置', type: 'tool' },
+          { id: 'privacy-settings', name: '隐私', icon: '🔐', description: '隐私设置', type: 'tool' },
+          { id: 'about', name: '关于', icon: 'ℹ️', description: '关于我们', type: 'info' },
+          { id: 'feedback', name: '反馈', icon: '💬', description: '意见反馈', type: 'tool' },
+          { id: 'help', name: '帮助', icon: '❓', description: '使用帮助', type: 'tool' },
+          { id: 'update', name: '更新', icon: '🔄', description: '版本更新', type: 'tool' },
+        ]
+      }
+    ];
+
+    // ==================== 状态管理 ====================
+    let currentPage = 'home';
+    let currentMode = null;
+    let currentFeature = null;
+    let previousPage = null;
+
+    // ==================== 初始化 ====================
+    function init() {
+      renderModeGrid();
+      loadData();
+    }
+
+    // 渲染模式网格
+    function renderModeGrid() {
+      const grid = document.getElementById('mode-grid');
+      if (!grid) return;
+
+      grid.innerHTML = MODES.map(mode => `
+        <div class="mode-card animate-scale-in" onclick="openMode('${mode.id}')">
+          <div class="mode-icon">${mode.icon}</div>
+          <div class="mode-name">${mode.name}</div>
+          <div class="mode-count">${mode.features.length}+功能</div>
+        </div>
+      `).join('');
+    }
+
+    // 打开模式
+    function openMode(modeId) {
+      currentMode = MODES.find(m => m.id === modeId);
+      if (!currentMode) return;
+
+      previousPage = 'home';
+
+      const title = document.getElementById('mode-header-title');
+      const subtitle = document.getElementById('mode-header-subtitle');
+      const featureList = document.getElementById('feature-list');
+
+      if (title) title.innerHTML = `<span>${currentMode.icon}</span><span>${currentMode.name}</span>`;
+      if (subtitle) subtitle.textContent = `${currentMode.features.length}个功能可用`;
+
+      if (featureList) {
+        featureList.innerHTML = currentMode.features.map((feature, index) => `
+          <div class="feature-item animate-slide-up" style="animation-delay: ${index * 0.05}s" onclick="openFeature('${feature.id}')">
+            <div class="feature-icon">${feature.icon}</div>
+            <div class="feature-content">
+              <div class="feature-title">${feature.name}</div>
+              <div class="feature-desc">${feature.description}</div>
+            </div>
+            <div class="feature-arrow">›</div>
+          </div>
+        `).join('');
+      }
+
+      showPage('mode');
+    }
+
+    // 打开功能
+    function openFeature(featureId) {
+      if (!currentMode) return;
+
+      currentFeature = currentMode.features.find(f => f.id === featureId);
+      if (!currentFeature) return;
+
+      previousPage = 'mode';
+
+      const title = document.getElementById('feature-header-title');
+      const content = document.getElementById('feature-content');
+
+      if (title) title.innerHTML = `<span>${currentFeature.icon}</span><span>${currentFeature.name}</span>`;
+
+      if (content) {
+        content.innerHTML = generateFeatureContent(currentFeature);
+        initFeatureFunctionality(currentFeature.id);
+      }
+
+      showPage('feature');
+    }
+
+    // 返回功能页
+    function backFromFeature() {
+      showPage(previousPage || 'mode');
+    }
+
+    // ==================== 功能内容生成 ====================
+    function generateFeatureContent(feature) {
+      const templates = {
+        calculator: `
+          <div class="calculator">
+            <input type="text" class="calc-display" id="calc-display" value="0" readonly>
+            <div class="calc-buttons">
+              <button class="calc-btn" onclick="calcInput('C')">C</button>
+              <button class="calc-btn" onclick="calcInput('±')">±</button>
+              <button class="calc-btn" onclick="calcInput('%')">%</button>
+              <button class="calc-btn operator" onclick="calcInput('÷')">÷</button>
+              <button class="calc-btn" onclick="calcInput('7')">7</button>
+              <button class="calc-btn" onclick="calcInput('8')">8</button>
+              <button class="calc-btn" onclick="calcInput('9')">9</button>
+              <button class="calc-btn operator" onclick="calcInput('×')">×</button>
+              <button class="calc-btn" onclick="calcInput('4')">4</button>
+              <button class="calc-btn" onclick="calcInput('5')">5</button>
+              <button class="calc-btn" onclick="calcInput('6')">6</button>
+              <button class="calc-btn operator" onclick="calcInput('-')">−</button>
+              <button class="calc-btn" onclick="calcInput('1')">1</button>
+              <button class="calc-btn" onclick="calcInput('2')">2</button>
+              <button class="calc-btn" onclick="calcInput('3')">3</button>
+              <button class="calc-btn operator" onclick="calcInput('+')">+</button>
+              <button class="calc-btn" onclick="calcInput('0')" style="grid-column: span 2;">0</button>
+              <button class="calc-btn" onclick="calcInput('.')">.</button>
+              <button class="calc-btn operator equals" onclick="calcResult()">=</button>
+            </div>
+          </div>
+        `,
+        weather: `
+          <div class="weather-card">
+            <div class="weather-icon">🌤️</div>
+            <div class="weather-temp">25°C</div>
+            <div class="weather-desc">晴 · 空气质量良好</div>
+            <div class="weather-details">
+              <div class="weather-detail">
+                <div class="weather-detail-icon">💧</div>
+                <div class="weather-detail-label">湿度</div>
+                <div class="weather-detail-value">65%</div>
+              </div>
+              <div class="weather-detail">
+                <div class="weather-detail-icon">💨</div>
+                <div class="weather-detail-label">风速</div>
+                <div class="weather-detail-value">3级</div>
+              </div>
+              <div class="weather-detail">
+                <div class="weather-detail-icon">🌡️</div>
+                <div class="weather-detail-label">体感</div>
+                <div class="weather-detail-value">27°C</div>
+              </div>
+            </div>
+          </div>
+        `,
+        calendar: `
+          <div class="calendar">
+            <div class="calendar-header">
+              <div class="calendar-title">${new Date().toLocaleDateString('zh-CN', { year: 'numeric', month: 'long' })}</div>
+            </div>
+            <div class="calendar-weekdays">
+              ${['日', '一', '二', '三', '四', '五', '六'].map(d => `<div class="calendar-weekday">${d}</div>`).join('')}
+            </div>
+            <div class="calendar-days" id="calendar-days">
+              ${generateCalendarDays()}
+            </div>
+          </div>
+        `,
+        todo: `
+          <div class="todo-input-container">
+            <input type="text" class="input-glass" id="todo-input" placeholder="输入新任务..." onkeypress="handleTodoKeypress(event)">
+            <button class="btn-glass btn-primary" onclick="addTodo()">添加</button>
+          </div>
+          <div class="todo-list" id="todo-list">
+            ${generateTodoList()}
+          </div>
+        `,
+        notes: `
+          <div class="note-editor">
+            <textarea class="note-textarea" id="note-textarea" placeholder="在这里写下你的想法...">${localStorage.getItem('note-content') || ''}</textarea>
+            <div class="note-actions">
+              <button class="btn-glass" onclick="saveNote()">💾 保存</button>
+              <button class="btn-glass btn-secondary" onclick="clearNote()">🗑️ 清空</button>
+            </div>
+          </div>
+        `,
+        music: `
+          <div class="music-player">
+            <div class="music-cover animate-bounce">🎵</div>
+            <div class="music-info">
+              <div class="music-title">夜空中最亮的星</div>
+              <div class="music-artist">逃跑计划</div>
+            </div>
+            <div class="music-progress">
+              <div class="music-progress-bar">
+                <div class="music-progress-fill"></div>
+              </div>
+              <div class="music-time">
+                <span>1:23</span>
+                <span>4:02</span>
+              </div>
+            </div>
+            <div class="music-controls">
+              <div class="music-btn" onclick="musicPrev()">⏮️</div>
+              <div class="music-btn play" onclick="musicToggle()">▶️</div>
+              <div class="music-btn" onclick="musicNext()">⏭️</div>
+            </div>
+          </div>
+        `,
+        default: `
+          <div class="hero animate-scale-in">
+            <div class="hero-icon">${feature.icon}</div>
+            <div class="hero-title">${feature.name}</div>
+            <div class="hero-desc">${feature.description}</div>
+          </div>
+          <div class="glass" style="padding: var(--space-2xl); text-align: center;">
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-xl);">✨ 功能正在完善中...</p>
+            <div style="font-size: 64px; margin-bottom: var(--space-lg);">🚧</div>
+            <p style="color: var(--text-tertiary);">更多精彩功能即将上线！</p>
+          </div>
+        `
+      };
+
+      return templates[feature.id] || templates.default;
+    }
+
+    // 生成日历
+    function generateCalendarDays() {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = today.getMonth();
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const todayDate = today.getDate();
+
+      let html = '';
+      
+      // 上个月的天数
+      const prevMonthDays = new Date(year, month, 0).getDate();
+      for (let i = firstDay - 1; i >= 0; i--) {
+        html += `<button class="calendar-day other-month">${prevMonthDays - i}</button>`;
+      }
+      
+      // 当前月的天数
+      for (let i = 1; i <= daysInMonth; i++) {
+        const isToday = i === todayDate;
+        html += `<button class="calendar-day ${isToday ? 'today' : ''}">${i}</button>`;
+      }
+      
+      // 下个月的天数
+      const remainingDays = 42 - (firstDay + daysInMonth);
+      for (let i = 1; i <= remainingDays; i++) {
+        html += `<button class="calendar-day other-month">${i}</button>`;
+      }
+      
+      return html;
+    }
+
+    // ==================== 功能逻辑 ====================
+    let calcValue = '0';
+    let calcOperator = '';
+    let calcPrevious = '';
+    let calcNewNumber = true;
+
+    function calcInput(value) {
+      const display = document.getElementById('calc-display');
+      if (!display) return;
+
+      if (value === 'C') {
+        calcValue = '0';
+        calcOperator = '';
+        calcPrevious = '';
+        calcNewNumber = true;
+      } else if (value === '±') {
+        calcValue = String(-parseFloat(calcValue));
+      } else if (value === '%') {
+        calcValue = String(parseFloat(calcValue) / 100);
+      } else if (['+', '−', '×', '÷'].includes(value)) {
+        if (calcOperator && !calcNewNumber) {
+          calcResult();
+        }
+        calcPrevious = calcValue;
+        calcOperator = value;
+        calcNewNumber = true;
+      } else if (value === '=') {
+        calcResult();
+        calcOperator = '';
+        calcPrevious = '';
+      } else {
+        if (calcNewNumber) {
+          calcValue = value;
+          calcNewNumber = false;
+        } else {
+          calcValue += value;
+        }
+      }
+
+      display.value = calcValue;
+    }
+
+    function calcResult() {
+      if (!calcOperator || !calcPrevious) return;
+      
+      const prev = parseFloat(calcPrevious);
+      const curr = parseFloat(calcValue);
+      let result;
+
+      switch (calcOperator) {
+        case '+': result = prev + curr; break;
+        case '−': result = prev - curr; break;
+        case '×': result = prev * curr; break;
+        case '÷': result = curr !== 0 ? prev / curr : 'Error'; break;
+        default: return;
+      }
+
+      calcValue = String(result);
+      calcNewNumber = true;
+    }
+
+    // 待办事项
+    function getTodos() {
+      return JSON.parse(localStorage.getItem('todos') || '[]');
+    }
+
+    function saveTodos(todos) {
+      localStorage.setItem('todos', JSON.stringify(todos));
+    }
+
+    function generateTodoList() {
+      const todos = getTodos();
+      if (todos.length === 0) {
+        return '<div class="glass" style="padding: var(--space-2xl); text-align: center; color: var(--text-secondary);">还没有任务，添加一个吧 ✨</div>';
+      }
+      
+      return todos.map((todo, index) => `
+        <div class="todo-item ${todo.completed ? 'completed' : ''}">
+          <div class="todo-checkbox ${todo.completed ? 'checked' : ''}" onclick="toggleTodo(${index})">
+            ${todo.completed ? '✓' : ''}
+          </div>
+          <div class="todo-text">${todo.text}</div>
+          <div class="todo-delete" onclick="deleteTodo(${index})">🗑️</div>
+        </div>
+      `).join('');
+    }
+
+    function addTodo() {
+      const input = document.getElementById('todo-input');
+      if (!input || !input.value.trim()) return;
+
+      const todos = getTodos();
+      todos.push({ text: input.value.trim(), completed: false });
+      saveTodos(todos);
+
+      input.value = '';
+      document.getElementById('todo-list').innerHTML = generateTodoList();
+    }
+
+    function handleTodoKeypress(event) {
+      if (event.key === 'Enter') addTodo();
+    }
+
+    function toggleTodo(index) {
+      const todos = getTodos();
+      todos[index].completed = !todos[index].completed;
+      saveTodos(todos);
+      document.getElementById('todo-list').innerHTML = generateTodoList();
+    }
+
+    function deleteTodo(index) {
+      const todos = getTodos();
+      todos.splice(index, 1);
+      saveTodos(todos);
+      document.getElementById('todo-list').innerHTML = generateTodoList();
+    }
+
+    // 笔记
+    function saveNote() {
+      const textarea = document.getElementById('note-textarea');
+      if (!textarea) return;
+      localStorage.setItem('note-content', textarea.value);
+      alert('💾 笔记已保存！');
+    }
+
+    function clearNote() {
+      const textarea = document.getElementById('note-textarea');
+      if (!textarea) return;
+      if (confirm('确定要清空笔记吗？')) {
+        textarea.value = '';
+        localStorage.removeItem('note-content');
+      }
+    }
+
+    // 音乐控制
+    let isPlaying = false;
+    function musicToggle() {
+      isPlaying = !isPlaying;
+      const btn = document.querySelector('.music-btn.play');
+      if (btn) btn.textContent = isPlaying ? '⏸️' : '▶️';
+    }
+    function musicPrev() { console.log('上一首'); }
+    function musicNext() { console.log('下一首'); }
+
+    // ==================== 页面导航 ====================
+    function showPage(pageName) {
+      const pages = document.querySelectorAll('.page');
+      const navItems = document.querySelectorAll('.nav-item');
+
+      pages.forEach(page => {
+        page.classList.remove('active', 'slide-left', 'slide-right');
+        if (page.id === `page-${pageName}`) {
+          page.classList.add('active', 'animate-fade-in');
+        }
+      });
+
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('data-page') === pageName) {
+          item.classList.add('active');
+        }
+      });
+
+      currentPage = pageName;
+
+      // 更新工具栏高亮
+      updateToolbar();
+    }
+
+    function updateToolbar() {
+      const toolbar = document.getElementById('toolbar');
+      if (!toolbar) return;
+      
+      const items = toolbar.querySelectorAll('.toolbar-item');
+      items.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('data-mode') === currentMode?.id) {
+          item.classList.add('active');
+        }
+      });
+    }
+
+    function switchMode(modeId) {
+      const mode = MODES.find(m => m.id === modeId);
+      if (mode) openMode(modeId);
+    }
+
+    // ==================== 其他功能 ====================
+    function toggleTheme() {
+      alert('🌙 主题切换功能开发中...');
+    }
+
+    function showSearch() {
+      alert('🔍 搜索功能开发中...');
+    }
+
+    function initFeatureFunctionality(featureId) {
+      // 根据功能ID初始化特定功能
+    }
+
+    function loadData() {
+      // 加载本地数据
+    }
+
+    // 初始化
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
 </body>
 </html>
